@@ -1,31 +1,18 @@
-# See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
 repos:
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v9.4.0
+    hooks:
+      - id: commitlint
+        stages: [ commit-msg ]
+        args: [ "--config=.configs/commitlint.config.js" ]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.4.0
     hooks:
-      - id: check-toml
-      - id: check-yaml
-      - id: end-of-file-fixer
-      - id: mixed-line-ending
-
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.11.5
+      - id: no-commit-to-branch
+        stages: [ prepare-commit-msg, merge-commit, push ]
+        always_run: false
+  - repo: https://github.com/mpalmer/action-validator
+    rev: v0.5.1
     hooks:
-      - id: isort
-        args: [ "--check", "package_name" ]
-
-  - repo: https://github.com/PyCQA/pylint/
-    rev: v2.14.5
-    hooks:
-      - id: pylint
-        exclude: tests/  # Prevent files in tests/ to be passed in to pylint.
-
-  - repo: local
-    hooks:
-      - id: check-pytest-before-push
-        name: check pytest before push
-        language: script
-        entry: hooks/check-pytest.sh
-        args: [ "--disable-pytest-warnings" ]
-        stages: [ push ]
+      - id: action-validator
+        stages: [ commit-msg ]
