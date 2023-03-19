@@ -25,6 +25,6 @@ repos:
     hooks:
       - id: check-pytest-before-push
         name: check pytest before push
-        language: system
-        entry: pytest
+        language: script
+        entry: hooks/check-pytest.sh
         stages: [ push ]
