@@ -6,7 +6,7 @@ from package_name.main import say_hello
 class TestMain(unittest.TestCase):
     """ Test main.py """
 
-    def say_hello_give_name_get_str(self):
+    def test_say_hello_give_name_get_str(self):
         """ Test say hello function """
         name = "Hamid"
 
