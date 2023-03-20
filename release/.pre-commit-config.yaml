@@ -26,6 +26,6 @@ repos:
       - id: check-pytest-before-push
         name: check pytest before push
         language: script
-        entry: hooks/check-pytest.sh
+        entry: .hooks/check-pytest.sh
         args: [ "--disable-pytest-warnings" ]
         stages: [ push ]
