@@ -8,7 +8,7 @@ on:
         default: 'release'
       release_directory:
         required: true
-        default: '.'
+        default: 'release'
       version:
         required: false
         default: ''
@@ -18,7 +18,7 @@ on:
         description: Skip generate changelog
       create_pr_for_branch:
         required: false
-        default: ''
+        default: 'main'
         description: Target branch? empty for skip.
 
 permissions:
