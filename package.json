@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "actions:changelog": "gh workflow run Changelog --ref dev -f version=''",
     "actions:release": "gh workflow run Release --ref dev -f version=''",
