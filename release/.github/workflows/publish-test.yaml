@@ -1,14 +1,18 @@
 name: Publish to PyPI
 
 on:
-  release:
-    types: [ published ]
-    branches: [ main ]
+  push:
+    branches: [ dev ]
   workflow_dispatch:
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+
+    # Limit branch:
+    if: github.ref == 'refs/heads/dev'
+    # Or
+    #if: github.ref != 'refs/heads/main'
 
     steps:
       - name: Checkout sources
@@ -26,8 +30,12 @@ jobs:
 
       - name: Configure poetry
         env:
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
-        run: poetry config pypi-token.pypi $PYPI_TOKEN
+          pypi_token: ${{ secrets.TEST_PYPI_TOKEN }}
+        run: |
+          poetry config repositories.testpypi https://test.pypi.org/legacy/
+          poetry config http-basic.testpypi __token__ $TEST_PYPI_TOKEN
 
       - name: Build and publish
-        run: poetry publish --build
+        run: |
+          poetry build 
+          poetry publish -r testpypi 

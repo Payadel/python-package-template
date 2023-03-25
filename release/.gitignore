@@ -1,5 +1,5 @@
 .vscode
-../.idea
+.idea
 dist
 .pytest_cache
 .tox
