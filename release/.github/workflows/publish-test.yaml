@@ -1,0 +1,41 @@
+name: Publish to PyPI
+
+on:
+  push:
+    branches: [ dev ]
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    # Limit branch:
+    if: github.ref == 'refs/heads/dev'
+    # Or
+    #if: github.ref != 'refs/heads/main'
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install poetry and dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install poetry
+
+      - name: Configure poetry
+        env:
+          pypi_token: ${{ secrets.TEST_PYPI_TOKEN }}
+        run: |
+          poetry config repositories.testpypi https://test.pypi.org/legacy/
+          poetry config http-basic.testpypi __token__ $TEST_PYPI_TOKEN
+
+      - name: Build and publish
+        run: |
+          poetry build 
+          poetry publish -r testpypi 
