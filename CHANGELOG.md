@@ -1,7 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.0.4](https://github.com/Payadel/python-package-template/compare/v0.0.3...v0.0.4) (2023-03-29)
+
+
+### Features
+
+* **ci:** add codeql.yml GitHub action ([16baece](https://github.com/Payadel/python-package-template/commit/16baece416e12cbfb743fe7f8cd68d583300dcb1))
 
 ### [0.0.3](https://github.com/Payadel/python-package-template/compare/v0.0.2...v0.0.3) (2023-03-25)
 
