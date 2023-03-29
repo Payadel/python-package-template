@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/Payadel/python-package-template/compare/v0.1.0...v0.1.1) (2023-03-29)
+
+
+### Fixes
+
+* update release.yaml. add `needs: [Release]` to `build-and-publish` job ([18740eb](https://github.com/Payadel/python-package-template/commit/18740ebd9169bf512f9f7084085b7b1243be7aab))
+
 ## [0.1.0](https://github.com/Payadel/python-package-template/compare/v0.0.4...v0.1.0) (2023-03-29)
 
 
