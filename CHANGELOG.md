@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/Payadel/python-package-template/compare/v0.1.1...v0.1.2) (2023-03-30)
+
+
+### Fixes
+
+* **codeql:** fix python-version ([fbc3efe](https://github.com/Payadel/python-package-template/commit/fbc3efedbf4b22b35f60e4fe8c0cf29aca774551))
+
+
+### Development: CI/CD, Build, etc
+
+* **codeql:** remove codeql action ([314529e](https://github.com/Payadel/python-package-template/commit/314529eca72971561db3f1339b04e43037b017f6))
+
 ### [0.1.1](https://github.com/Payadel/python-package-template/compare/v0.1.0...v0.1.1) (2023-03-29)
 
 
