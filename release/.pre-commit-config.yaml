@@ -13,7 +13,7 @@ repos:
     rev: 5.11.5
     hooks:
       - id: isort
-        args: [ "--check", "package_name" ]
+      # args: [ "--check", "package_name" ]
 
   - repo: https://github.com/PyCQA/pylint/
     rev: v2.14.5
