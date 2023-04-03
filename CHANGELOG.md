@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/Payadel/python-package-template/compare/v0.1.2...v0.2.0) (2023-04-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **publish:** separates publish section from release
+* **precommit:** remove isort arg from .pre-commit-config.yaml
+
+### Features
+
+* **gitignore:** add `pyc` files to gitignore ([1062ac7](https://github.com/Payadel/python-package-template/commit/1062ac7bbcd6089633c460c65f5b4b97fcd11423))
+* **publish:** add inputs to publish-test.yaml action ([8edca18](https://github.com/Payadel/python-package-template/commit/8edca18b22b9ac64cb420699cbfd335ccc9ed64d))
+* **pyproject:** add `repository` and `keywords` fields to pyproject.toml ([251e597](https://github.com/Payadel/python-package-template/commit/251e597391730fdb1f44dec3c4bcc28caa04cd4c))
+
+
+### Development: CI/CD, Build, etc
+
+* **lock:** update lock.yml ([f70e463](https://github.com/Payadel/python-package-template/commit/f70e463a4ddc76709248340074d8f334e9fa8e0f))
+* **makefile:** add Makefile ([947b382](https://github.com/Payadel/python-package-template/commit/947b3823ee0c771b88c29857bb3da7098333f584))
+
+
+### Fixes
+
+* **precommit:** remove isort arg from .pre-commit-config.yaml ([e9f1bd5](https://github.com/Payadel/python-package-template/commit/e9f1bd5aa640ced071fb0a1aa5bf8170c99298de))
+* **precommit:** update `pre-commit-hooks` to v4.4.0 ([3f82d9b](https://github.com/Payadel/python-package-template/commit/3f82d9be7e9e6c14adf9527344ed96bf425e15e3))
+* **publish:** fix `pypi_token` token name in publish-test.yaml ([94cb0c1](https://github.com/Payadel/python-package-template/commit/94cb0c1becefd55776d1a0b00b3cd4833fc8f368))
+* **publish:** separates publish section from release ([cbfa7d9](https://github.com/Payadel/python-package-template/commit/cbfa7d9f91c21e39390deb30a4c70ca213202cf3))
+* **release:** fix `Update poetry version` bug ([8d1d99b](https://github.com/Payadel/python-package-template/commit/8d1d99b168d3717810043c15ff41a464f053451e))
+
 ### [0.1.2](https://github.com/Payadel/python-package-template/compare/v0.1.1...v0.1.2) (2023-03-30)
 
 
