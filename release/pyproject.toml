@@ -1,3 +1,4 @@
+# https://python-poetry.org/docs/pyproject/
 [tool.poetry]
 name = "package-name"
 version = "0.1.0"
@@ -5,6 +6,8 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 license = "GPLV3"
 readme = "README.md"
+repository = "https://github.com/USER_NAME/REPO"
+keywords = []
 packages = [{ include = "package_name" }]
 
 [tool.poetry.dependencies]

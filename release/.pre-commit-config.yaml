@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.4.0
     hooks:
       - id: check-toml
       - id: check-yaml
@@ -13,7 +13,7 @@ repos:
     rev: 5.11.5
     hooks:
       - id: isort
-        args: [ "--check", "package_name" ]
+      # args: [ "--check", "package_name" ]
 
   - repo: https://github.com/PyCQA/pylint/
     rev: v2.14.5

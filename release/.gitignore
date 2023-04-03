@@ -6,3 +6,4 @@ dist
 htmlcov
 .coverage
 poetry.lock
+**.pyc
