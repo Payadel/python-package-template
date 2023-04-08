@@ -1,7 +1,18 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.2.1](https://github.com/Payadel/python-package-template/compare/v0.2.0...v0.2.1) (2023-04-08)
+
+
+### Features
+
+* add git hook to check `tox` before push ([d4bcf53](https://github.com/Payadel/python-package-template/commit/d4bcf539f49bd364139063b34c0df9f156795729))
+
+
+### Fixes
+
+* fix check-pytest.sh ([4fbdb84](https://github.com/Payadel/python-package-template/commit/4fbdb843a06f2a2081cc3ef335a4276d9e21e042))
 
 ## [0.2.0](https://github.com/Payadel/python-package-template/compare/v0.1.2...v0.2.0) (2023-04-03)
 
