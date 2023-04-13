@@ -6,6 +6,20 @@
 
 version: 2
 updates:
+  # Enable version updates for pip
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
+
+  # Enable version updates for pip release/
+  - package-ecosystem: "pip"
+    directory: "release"
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
+
   # Enable version updates for npm
   - package-ecosystem: "npm"
     # Look for `package.json` and `lock` files in the `root` directory
@@ -15,10 +29,26 @@ updates:
       interval: "weekly"
     target-branch: "dev"
 
-  # Enable version updates for Docker
+  # Enable version updates for npm release
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "release"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
+
   - package-ecosystem: "github-actions"
     # Look for a `Dockerfile` in the `root` directory
     directory: "/"
+    # Check for updates once a week
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
+
+  - package-ecosystem: "github-actions"
+    # Look for a `Dockerfile` in the `root` directory
+    directory: "release"
     # Check for updates once a week
     schedule:
       interval: "weekly"

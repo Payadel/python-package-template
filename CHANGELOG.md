@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/Payadel/python-package-template/compare/v0.2.1...v0.2.2) (2023-04-13)
+
+
+### Features
+
+* add requirements.txt ([876d041](https://github.com/Payadel/python-package-template/commit/876d041cefd0bfe40426ce1b7b2d26d1ea1a5f82))
+* use `Payadel/pre-commit-hooks` in .pre-commit-config.yaml ([733c82b](https://github.com/Payadel/python-package-template/commit/733c82b52991dde729c0ab4e3d8b4aee893a129a))
+
 ### [0.2.1](https://github.com/Payadel/python-package-template/compare/v0.2.0...v0.2.1) (2023-04-08)
 
 
