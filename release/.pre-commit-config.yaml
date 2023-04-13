@@ -21,17 +21,18 @@ repos:
       - id: pylint
         exclude: tests/  # Prevent files in tests/ to be passed in to pylint.
 
-  - repo: local
+  - repo: https://github.com/Payadel/pre-commit-hooks
+    rev: v0.1.2
     hooks:
-#      - id: check-tox-before-push
-#        name: check tox before push
-#        language: script
-#        entry: .hooks/check-tox.sh
-#        args: [ "dev" ]
+#      - id: run-scripts
+#        name: check-tox-before-push
+#        args: [ "-f=.hooks/check-tox.sh", "dev" ]
 #        stages: [ push ]
-      - id: check-pytest-before-push
-        name: check pytest before push
-        language: script
-        entry: .hooks/check-pytest.sh
-        args: [ "--disable-pytest-warnings" ]
+#        pass_filenames: false
+#        verbose: false
+      - id: run-scripts
+        name: check-pytest-before-push
+        args: [ "-f=.hooks/check-pytest.sh", "--disable-pytest-warnings" ]
         stages: [ push ]
+        pass_filenames: false
+        verbose: false
