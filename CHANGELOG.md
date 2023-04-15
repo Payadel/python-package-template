@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/Payadel/python-package-template/compare/v0.2.2...v0.2.3) (2023-04-15)
+
+
+### Features
+
+* add coverage.yaml ([006dcfe](https://github.com/Payadel/python-package-template/commit/006dcfea573944ba2512c8e6e55459c414ffdeb9))
+* add more commands to Makefile ([2014881](https://github.com/Payadel/python-package-template/commit/2014881cb7821f8a3f5a06147f17b0f229dee10d))
+
 ### [0.2.2](https://github.com/Payadel/python-package-template/compare/v0.2.1...v0.2.2) (2023-04-13)
 
 
