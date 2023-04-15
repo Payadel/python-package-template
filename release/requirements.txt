@@ -1,2 +1,2 @@
-package==version
-package>=version
+on_rails==4.0.1
+pylity>=0.0.3
