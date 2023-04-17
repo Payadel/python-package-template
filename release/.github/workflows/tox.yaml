@@ -1,4 +1,4 @@
-name: Build
+name: tox
 
 on:
   pull_request:

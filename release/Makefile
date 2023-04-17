@@ -1,4 +1,4 @@
-.PHONY: help update-poetry-dependencies publish-test-action publish-action build-action coverage-action
+.PHONY: help update-poetry-dependencies publish-test-action publish-action tox-action coverage-action
 
 update-poetry-dependencies:  ## Update poetry dependencies
 	cat requirements.txt | xargs poetry add
@@ -9,8 +9,8 @@ publish-test-action: ## Run publish test action
 publish-action: ## Run publish action
 	gh workflow run 'Publish to PyPI' --ref $(REF) -f version=$(VERSION)
 
-build-action: ## Run build action
-	gh workflow run build --ref $(REF)
+tox-action: ## Run build action
+	gh workflow run tox --ref $(REF)
 
 coverage-action:
 	gh workflow run 'Coverage Report' --ref $(REF)
