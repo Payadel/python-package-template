@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/Payadel/python-package-template/compare/v0.2.3...v0.3.0) (2023-04-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename `build` to `tox`
+
+### Features
+
+* add CONTRIBUTING.md ([ce7fdbd](https://github.com/Payadel/python-package-template/commit/ce7fdbdc4827deaabdf996733844a1e475731c1d))
+* add on_rails and pylity packages to requirements.txt ([c3ea340](https://github.com/Payadel/python-package-template/commit/c3ea3401631af3f9f60cb13fb55fba3f602de783))
+
+
+### Development: CI/CD, Build, etc
+
+* remove pr-labels.yml ([f72a0d5](https://github.com/Payadel/python-package-template/commit/f72a0d502867941830a9d0c22ded71c01f6bce25))
+
+
+### Fixes
+
+* rename `build` to `tox` ([3b3ca6a](https://github.com/Payadel/python-package-template/commit/3b3ca6a2a24e534f2716d868a451a1dda76a41cd))
+* update requirements.txt ([6aba506](https://github.com/Payadel/python-package-template/commit/6aba506b2c0cf7ae648f69a88f6516959b5e7a74))
+
 ### [0.2.3](https://github.com/Payadel/python-package-template/compare/v0.2.2...v0.2.3) (2023-04-15)
 
 
