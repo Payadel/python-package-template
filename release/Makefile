@@ -1,7 +1,7 @@
 .PHONY: help update-poetry-dependencies publish-test-action publish-action tox-action coverage-action
 
 update-poetry-dependencies:  ## Update poetry dependencies
-	cat requirements.txt | xargs poetry add
+	xargs poetry add < requirements.txt
 
 publish-test-action: ## Run publish test action
 	gh workflow run 'Publish to Test.PyPI' --ref $(REF) -f version=$(VERSION)
