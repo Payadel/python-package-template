@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/Payadel/python-package-template/compare/v0.3.0...v0.3.1) (2023-04-19)
+
+
+### Features
+
+* update poetry dependencies before push ([18f35bd](https://github.com/Payadel/python-package-template/commit/18f35bdd334bdfa7871466a81095cb6c76adb6b7))
+
 ## [0.3.0](https://github.com/Payadel/python-package-template/compare/v0.2.3...v0.3.0) (2023-04-17)
 
 
