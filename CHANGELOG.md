@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/Payadel/python-package-template/compare/v0.3.1...v0.3.2) (2023-04-22)
+
+
+### Fixes
+
+* **ci:** fix coverage.yaml event ([96fd396](https://github.com/Payadel/python-package-template/commit/96fd396778a1437050a781f69a6c0f6cf813aabe))
+
 ### [0.3.1](https://github.com/Payadel/python-package-template/compare/v0.3.0...v0.3.1) (2023-04-19)
 
 
