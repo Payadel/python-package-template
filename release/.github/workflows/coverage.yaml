@@ -1,9 +1,9 @@
 name: Coverage Report
 
 on:
-  push:
+  create:
     tags:
-      - '*'
+      - v*
   workflow_dispatch:
 
 permissions:
