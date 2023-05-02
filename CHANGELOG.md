@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/Payadel/python-package-template/compare/v0.3.2...v0.3.3) (2023-05-02)
+
+
+### Development: CI/CD, Build, etc
+
+* update actions ([42141d1](https://github.com/Payadel/python-package-template/commit/42141d113fe65708442f60c827a1a2eecac07761))
+
+
+### Fixes
+
+* **ci:** update Makefile ([a9e7a12](https://github.com/Payadel/python-package-template/commit/a9e7a126ae48fc29ea91802cdc73dca54e552643))
+* **ci:** update release.yaml ([1000fee](https://github.com/Payadel/python-package-template/commit/1000fee3cced09c5a5965e54a2c1c21d1789c281))
+
 ### [0.3.2](https://github.com/Payadel/python-package-template/compare/v0.3.1...v0.3.2) (2023-04-22)
 
 
