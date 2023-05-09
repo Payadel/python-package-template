@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/Payadel/python-package-template/compare/v0.3.3...v0.3.4) (2023-05-09)
+
+
+### Development: CI/CD, Build, etc
+
+* remove lock.yml ([6740897](https://github.com/Payadel/python-package-template/commit/674089726372c9fa283a58379c2e7bfa9a7d654d))
+* use `Payadel/inputs` in actions ([c714640](https://github.com/Payadel/python-package-template/commit/c714640e02ded3f0b8e0fc643cb753b3b6f0fb89))
+
+
+### Fixes
+
+* **ci:** use `Payadel/inputs` in actions ([9c057f5](https://github.com/Payadel/python-package-template/commit/9c057f510d098ad38426d8e9486f947ab5520093))
+
 ### [0.3.3](https://github.com/Payadel/python-package-template/compare/v0.3.2...v0.3.3) (2023-05-02)
 
 
