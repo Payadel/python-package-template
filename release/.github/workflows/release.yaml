@@ -25,17 +25,9 @@ on:
           - never
           - always
           - auto
-      skip-release-file:
-        type: boolean
-        required: false
-        default: true
-        description: Skip create release file
       release-file-name:
-        required: true
+        required: false
         default: 'release'
-      release-directory:
-        required: true
-        default: 'package_name'
 
 permissions:
   contents: write
@@ -70,12 +62,8 @@ jobs:
               default: ''
             - name: generate-changelog
               default: 'auto'
-            - name: skip-release-file
-              default: 'true'
             - name: release-file-name
               default: 'release'
-            - name: release-directory
-              default: 'package_name'
             - name: current-branch-name
               default: '$(git rev-parse --abbrev-ref HEAD)'
 
@@ -88,9 +76,7 @@ jobs:
           ignore-less-version-error: ${{ steps.inputs.outputs.ignore-less-version-error }}
           create-pr-for-branch: ${{ steps.inputs.outputs.create-pr-for-branch }}
           generate-changelog: ${{ steps.inputs.outputs.generate-changelog }}
-          skip-release-file: ${{ steps.inputs.outputs.skip-release-file }}
-          release-file-name: ${{ steps.inputs.outputs.release-file-name }}
-          release-directory: ${{ steps.inputs.outputs.release-directory }}
+          skip-release-file: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -108,10 +94,15 @@ jobs:
           git commit -m "chore: update pyproject to ${{ steps.release.outputs.version }}"
           git push
 
+      - name: Build poetry
+        run: |
+          poetry build
+          mv 'dist/package_name-${{ steps.release.outputs.version }}.tar.gz' 'dist/${{ steps.release.outputs.release-filename }}.tar.gz'
+
       - name: GitHub Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: '${{ steps.release.outputs.release-filename }}'
+          artifacts: 'dist/${{ steps.release.outputs.release-filename }}.tar.gz'
           allowUpdates: true
           body: ${{ steps.release.outputs.changelog }}
           tag: 'v${{ steps.release.outputs.version }}'
