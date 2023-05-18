@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/Payadel/python-package-template/compare/v0.3.4...v0.3.5) (2023-05-18)
+
+
+### Features
+
+* add logger.py ([156835f](https://github.com/Payadel/python-package-template/commit/156835f98d7e2014204402dd9a7bc988198a537f))
+
 ### [0.3.4](https://github.com/Payadel/python-package-template/compare/v0.3.3...v0.3.4) (2023-05-09)
 
 
