@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.6](https://github.com/Payadel/python-package-template/compare/v0.3.5...v0.3.6) (2023-05-18)
+
+
+### Features
+
+* update release.yaml: build project and push as github release ([771b527](https://github.com/Payadel/python-package-template/commit/771b52792eb8d2ff0af618915725ba55f562a5fb))
+
 ### [0.3.5](https://github.com/Payadel/python-package-template/compare/v0.3.4...v0.3.5) (2023-05-18)
 
 
