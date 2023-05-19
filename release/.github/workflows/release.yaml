@@ -99,12 +99,12 @@ jobs:
       - name: Build poetry
         run: |
           poetry build
-          mv 'dist/${{ steps.inputs.outputs.package_name }}-${{ steps.release.outputs.version }}.tar.gz' 'dist/${{ steps.release.outputs.release-filename }}.tar.gz'
+          mv 'dist/${{ steps.inputs.outputs.package_name }}-${{ steps.release.outputs.version }}.tar.gz' 'dist/${{ steps.inputs.outputs.release-file-name }}.tar.gz'
 
       - name: GitHub Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: 'dist/${{ steps.release.outputs.release-filename }}.tar.gz'
+          artifacts: 'dist/${{ steps.inputs.outputs.release-file-name }}.tar.gz'
           allowUpdates: true
           body: ${{ steps.release.outputs.changelog }}
           tag: 'v${{ steps.release.outputs.version }}'
