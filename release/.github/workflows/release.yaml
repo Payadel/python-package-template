@@ -64,6 +64,8 @@ jobs:
               default: 'auto'
             - name: release-file-name
               default: 'release'
+            - name: package_name
+              default: 'package_name'  # TODO: Replace your project name
             - name: current-branch-name
               default: '$(git rev-parse --abbrev-ref HEAD)'
 
@@ -97,7 +99,7 @@ jobs:
       - name: Build poetry
         run: |
           poetry build
-          mv 'dist/package_name-${{ steps.release.outputs.version }}.tar.gz' 'dist/${{ steps.release.outputs.release-filename }}.tar.gz'
+          mv 'dist/${{ steps.inputs.outputs.package_name }}-${{ steps.release.outputs.version }}.tar.gz' 'dist/${{ steps.release.outputs.release-filename }}.tar.gz'
 
       - name: GitHub Release
         uses: ncipollo/release-action@v1
