@@ -12,6 +12,11 @@ packages = [{ include = "package_name" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+on_rails = "4.2.0"
+pylity = "0.0.10"
+Inject = "4.3.1"
+PyYAML = "6.0"
+pydantic = "1.10.7"
 
 
 [tool.poetry.group.dev.dependencies]

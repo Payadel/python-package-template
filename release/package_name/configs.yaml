@@ -1,0 +1,9 @@
+log:
+  stream:
+    level: 'info'
+    format: '[%(levelname)s] %(message)s'
+  file:
+    disable: True
+    level: 'debug'
+    file_name: 'app.log'
+    format: '%(asctime)s [%(levelname)s] %(message)s'

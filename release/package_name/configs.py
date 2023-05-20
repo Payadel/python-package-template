@@ -1,0 +1,24 @@
+import os.path
+
+import yaml
+from on_rails import Result, def_result
+from on_rails.ResultDetails.Success.WarningDetail import WarningDetail
+from pydantic import BaseModel
+
+from package_name.logger import LogConfigs
+
+
+class Configs(BaseModel):
+    log: LogConfigs
+
+
+@def_result()
+def load_configs_from_yaml(file_path: str) -> Result[Configs]:
+    if not os.path.isfile(file_path):
+        return Result.ok(Configs(), WarningDetail(f"Can not find config file in {file_path}"))
+
+    with open(file_path, "r") as file:
+        config_data = yaml.safe_load(file)
+
+    configs = Configs(**config_data)
+    return Result.ok(configs)
