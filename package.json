@@ -1,5 +1,5 @@
 {
-  "version": "0.3.7",
+  "version": "0.3.8",
   "scripts": {
     "actions:changelog": "gh workflow run Changelog --ref dev -f version=''",
     "actions:release": "gh workflow run Release --ref dev -f version='' -f skip_changelog=true",
