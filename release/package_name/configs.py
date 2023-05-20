@@ -14,6 +14,12 @@ class Configs(BaseModel):
 
 @def_result()
 def load_configs_from_yaml(file_path: str) -> Result[Configs]:
+    """
+    Loads the configs from a yaml file.
+
+    :param file_path: str: Specify the file path of the configs
+    :return: A result with value Configs
+    """
     if not os.path.isfile(file_path):
         return Result.ok(Configs(), WarningDetail(f"Can not find config file in {file_path}"))
 

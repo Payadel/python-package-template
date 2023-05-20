@@ -5,12 +5,14 @@ from pydantic import BaseModel
 
 
 class StreamConfig(BaseModel):
+    """ Stream configs model for logger """
     disable = False
     level = 'info'
     format = '[%(levelname)s] %(message)s'
 
 
 class FileConfig(BaseModel):
+    """ File configs model for logger """
     disable = True
     level = 'debug'
     file_name = 'app.log'
@@ -18,12 +20,18 @@ class FileConfig(BaseModel):
 
 
 class LogConfigs(BaseModel):
+    """ Configs model for logger """
     stream: StreamConfig
     file: FileConfig
 
 
 @def_result()
 def create_logger(log_configs: LogConfigs) -> Result:
+    """
+    The create_logger function is responsible for creating a logger object that can be used to log messages.
+    The function takes in a LogConfigs object, which contains the configuration information needed to create the logger.
+    The function returns either an error or the created logger.
+    """
     _logger = logging.getLogger()
     _logger.setLevel(logging.DEBUG)
 
