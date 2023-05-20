@@ -1,27 +1,76 @@
 import logging
 
+from on_rails import Result, def_result
+from pydantic import BaseModel
 
-def configure_logger():
+
+class StreamConfig(BaseModel):
+    """ Stream configs model for logger """
+    disable = False
+    level = 'info'
+    format = '[%(levelname)s] %(message)s'
+
+
+class FileConfig(BaseModel):
+    """ File configs model for logger """
+    disable = True
+    level = 'debug'
+    file_name = 'app.log'
+    format = '%(asctime)s [%(levelname)s] %(message)s'
+
+
+class LogConfigs(BaseModel):
+    """ Configs model for logger """
+    stream: StreamConfig
+    file: FileConfig
+
+
+@def_result()
+def create_logger(log_configs: LogConfigs) -> Result:
+    """
+    The create_logger function is responsible for creating a logger object that can be used to log messages.
+    The function takes in a LogConfigs object, which contains the configuration information needed to create the logger.
+    The function returns either an error or the created logger.
+    """
     _logger = logging.getLogger()
     _logger.setLevel(logging.DEBUG)
 
-    file_handler = logging.FileHandler('app.log')
-    file_handler.setLevel(logging.DEBUG)
+    if not log_configs.file.disable:
+        file_handler = logging.FileHandler(log_configs.file.file_name)
+        file_handler.setLevel(_get_set_level(log_configs.file.level))
+        file_formatter = logging.Formatter(log_configs.file.format)
+        file_handler.setFormatter(file_formatter)
+        _logger.addHandler(file_handler)
 
-    stream_handler = logging.StreamHandler()
-    stream_handler.setLevel(logging.INFO)
+    if not log_configs.stream.disable:
+        stream_handler = logging.StreamHandler()
+        stream_handler.setLevel(_get_set_level(log_configs.stream.level))
+        stream_formatter = logging.Formatter(log_configs.stream.format)
+        stream_handler.setFormatter(stream_formatter)
+        _logger.addHandler(stream_handler)
 
-    file_formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
-    file_handler.setFormatter(file_formatter)
-
-    stream_formatter = logging.Formatter('[%(levelname)s] %(message)s')
-    stream_handler.setFormatter(stream_formatter)
-
-    _logger.addHandler(file_handler)
-    _logger.addHandler(stream_handler)
-
-    return _logger
+    return Result.ok(_logger)
 
 
-# Initialize the logger
-logger = configure_logger()
+def _get_set_level(level: str):
+    level = level.upper()
+
+    match level:
+        case 'CRITICAL':
+            return logging.CRITICAL
+        case 'FATAL':
+            return logging.FATAL
+        case 'ERROR':
+            return logging.ERROR
+        case 'WARNING':
+            return logging.WARNING
+        case 'WARN':
+            return logging.WARN
+        case 'INFO':
+            return logging.INFO
+        case 'DEBUG':
+            return logging.DEBUG
+        case 'NOTSET':
+            return logging.NOTSET
+        case _:
+            return logging.NOTSET
