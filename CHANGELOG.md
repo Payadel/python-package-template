@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.8](https://github.com/Payadel/python-package-template/compare/v0.3.7...v0.3.8) (2023-05-20)
+
+
+### Features
+
+* add injector to template, load configs from yaml file, improve logger ([2db60bc](https://github.com/Payadel/python-package-template/commit/2db60bc7a2624a8cb630842b65299cad23924bb3))
+* add inputs to template ([90fa74b](https://github.com/Payadel/python-package-template/commit/90fa74b731834d6275f1defb52332ab3b2070bc6))
+
+
+### Fixes
+
+* add docstrings to template ([3a354b8](https://github.com/Payadel/python-package-template/commit/3a354b85bffa6b8570cd66b9489956144df43d1c))
+* remove old test in template ([a480568](https://github.com/Payadel/python-package-template/commit/a4805680d93d7e2d0016235a57319bb652f35a91))
+
 ### [0.3.7](https://github.com/Payadel/python-package-template/compare/v0.3.6...v0.3.7) (2023-05-19)
 
 
