@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.9](https://github.com/Payadel/python-package-template/compare/v0.3.8...v0.3.9) (2023-05-21)
+
+
+### Fixes
+
+* fix imports in main.py ([af2e148](https://github.com/Payadel/python-package-template/commit/af2e148bde25b67b24237fab08d9862f7ffff811))
+
 ### [0.3.8](https://github.com/Payadel/python-package-template/compare/v0.3.7...v0.3.8) (2023-05-20)
 
 
