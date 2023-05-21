@@ -3,8 +3,8 @@ import logging
 import inject
 from on_rails import Result, def_result
 
-from configs import Configs, load_configs_from_yaml
-from logger import create_logger
+from package_name.configs import Configs, load_configs_from_yaml
+from package_name.logger import create_logger
 from package_name.inputs import get_inputs, Inputs
 from run import run
 
