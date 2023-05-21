@@ -1,6 +1,7 @@
 import logging
 
-from on_rails import Result, def_result
+import inject as inject
+from on_rails import Result, def_result, try_func
 from pydantic import BaseModel
 
 
@@ -74,3 +75,56 @@ def _get_set_level(level: str):
             return logging.NOTSET
         case _:
             return logging.NOTSET
+
+
+class ColorfulConsole:
+    # ANSI escape sequences for different colors
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BLUE = '\033[94m'
+    RESET = '\033[0m'
+
+    @staticmethod
+    def error(text):
+        ColorfulConsole._print(ColorfulConsole.RED, text)
+
+    @staticmethod
+    def success(text):
+        ColorfulConsole._print(ColorfulConsole.GREEN, text)
+
+    @staticmethod
+    def warning(text):
+        ColorfulConsole._print(ColorfulConsole.YELLOW, text)
+
+    @staticmethod
+    def info(text):
+        ColorfulConsole._print(ColorfulConsole.BLUE, text)
+
+    @staticmethod
+    def _print(color_code, text: str):
+        print(color_code + text + ColorfulConsole.RESET)
+
+
+def log_result(result: Result) -> None:
+    """
+    Logs the result of an operation.
+    """
+    inject_result = try_func(lambda: inject.instance(logging.Logger))
+    if not inject_result.success or not inject_result.value:
+        logger = ColorfulConsole()
+    else:
+        logger = inject_result.value
+
+    if result.success:
+        if result.detail or result.value:
+            logger.info(str(result))
+        else:
+            logger.info("The operation was completed successfully.")
+    else:
+        if not result.detail:
+            logger.error(repr(result))
+        # elif result.detail.is_instance_of(MetaTraderDetail):
+        #     logger.error(str(result))  # Expected errors no need detail like stacktrace, etc
+        else:
+            logger.error(repr(result))  # Unexpected error
