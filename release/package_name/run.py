@@ -1,7 +1,6 @@
 import logging
 
 import inject
-
 from package_name.inputs import Inputs
 
 
