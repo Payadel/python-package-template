@@ -1,4 +1,5 @@
 import logging
+import sys
 
 import inject
 from on_rails import Result, def_result
@@ -13,10 +14,12 @@ def main():
     """
     The main function is the entry point for this program.
     """
-    startup() \
+    res = startup() \
         .on_success(lambda: run()) \
         .on_success_tee(lambda result: print(result)) \
         .on_fail_tee(lambda result: print(repr(result)))
+
+    sys.exit(0 if res.success else res.code())
 
 
 @def_result()
