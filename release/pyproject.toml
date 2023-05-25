@@ -1,7 +1,7 @@
 # https://python-poetry.org/docs/pyproject/
 [tool.poetry]
 name = "package-name"
-version = "0.1.0"
+version = "0.0.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 license = "GPLV3"
@@ -29,7 +29,7 @@ tox = "^4.4.7"
 tox-gh-actions = "^3.1.0"
 
 [tool.poetry.scripts]
-my-script = "package_name.main:say_hello"
+my-script = "package_name.main:main"
 
 [build-system]
 requires = ["poetry-core"]
