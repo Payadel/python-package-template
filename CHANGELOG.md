@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.11](https://github.com/Payadel/python-package-template/compare/v0.3.10...v0.3.11) (2023-05-25)
+
+
+### Fixes
+
+* fix Makefile ([65f6e88](https://github.com/Payadel/python-package-template/commit/65f6e888a89eb0a1608b96484c9da03076ff2ab3))
+* fix pyproject.toml ([ef3d044](https://github.com/Payadel/python-package-template/commit/ef3d04435febaad025ea0f956f267a772b7e13da))
+
 ### [0.3.10](https://github.com/Payadel/python-package-template/compare/v0.3.9...v0.3.10) (2023-05-21)
 
 
