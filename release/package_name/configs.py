@@ -3,9 +3,8 @@ import os.path
 import yaml
 from on_rails import Result, def_result
 from on_rails.ResultDetails.Success.WarningDetail import WarningDetail
-from pydantic import BaseModel
-
 from package_name.logger import LogConfigs
+from pydantic import BaseModel
 
 
 class Configs(BaseModel):

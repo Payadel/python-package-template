@@ -1,6 +1,6 @@
 import argparse
 
-from on_rails import def_result, Result
+from on_rails import Result, def_result
 
 
 class Inputs:

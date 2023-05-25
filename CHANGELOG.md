@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.12](https://github.com/Payadel/python-package-template/compare/v0.3.11...v0.3.12) (2023-05-25)
+
+
+### Features
+
+* support proxy (tor) ([f21e573](https://github.com/Payadel/python-package-template/commit/f21e573e0cd85ee00735e84077577417b75c1872))
+* support sqlite database ([1c1330a](https://github.com/Payadel/python-package-template/commit/1c1330adb99a34ebf165de4145209994cd013f88))
+
+
+### Fixes
+
+* fix exit code in main ([900e4ee](https://github.com/Payadel/python-package-template/commit/900e4eec9b271ae6032d5c54579d6bf9a18ddab0))
+* reorder imports with isort ([fb6f5e8](https://github.com/Payadel/python-package-template/commit/fb6f5e80040c4c7e21950ed2b2922bc694e5c3d7))
+
 ### [0.3.11](https://github.com/Payadel/python-package-template/compare/v0.3.10...v0.3.11) (2023-05-25)
 
 

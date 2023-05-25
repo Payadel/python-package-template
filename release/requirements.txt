@@ -3,3 +3,7 @@ pylity>=0.0.10
 Inject>=4.3.1
 PyYAML>=6.0
 pydantic>=1.10.7
+sqlalchemy>=2.0.15
+requests>=2.31.0
+requests[socks]
+requests[security]
