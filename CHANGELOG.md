@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.13](https://github.com/Payadel/python-package-template/compare/v0.3.12...v0.3.13) (2023-05-26)
+
+
+### Features
+
+* support sql session in threads ([44a5e57](https://github.com/Payadel/python-package-template/commit/44a5e571e6362f2722943c37c294dc8f9f8a8b1d))
+
 ### [0.3.12](https://github.com/Payadel/python-package-template/compare/v0.3.11...v0.3.12) (2023-05-25)
 
 
