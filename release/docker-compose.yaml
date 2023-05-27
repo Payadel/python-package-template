@@ -5,8 +5,4 @@ services:
     image: my-app
     volumes:
       - ./package_name/data:/app/data
-    environment:
-      - ALL_PROXY=socks5h://127.0.0.1:9050
-      - HTTP_PROXY=socks5h://127.0.0.1:9050
-      - HTTPS_PROXY=socks5h://127.0.0.1:9050
     network_mode: host
