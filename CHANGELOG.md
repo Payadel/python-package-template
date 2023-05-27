@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.16](https://github.com/Payadel/python-package-template/compare/v0.3.15...v0.3.16) (2023-05-27)
+
+
+### Features
+
+* support proxy in docker-compose.yaml ([7ca04b9](https://github.com/Payadel/python-package-template/commit/7ca04b959480be21a9eb2af0ea56478d932b9017))
+
+
+### Fixes
+
+* fix default app log path ([3d82569](https://github.com/Payadel/python-package-template/commit/3d82569af786ae37e5ac89ac0fe870387ea65927))
+* fix docker ([eb6f39a](https://github.com/Payadel/python-package-template/commit/eb6f39a7aeb8309915279ea67c7e9ff306865ab8))
+* fix docker-compose volume ([0450f81](https://github.com/Payadel/python-package-template/commit/0450f812268790965d3933e7fb153a3306a1bdc0))
+* fix pyproject.toml dependencies ([0e52bb8](https://github.com/Payadel/python-package-template/commit/0e52bb8aa9fcdad8c19665fc2c1daa72b119a604))
+* fix use python for install-package ([67b3fde](https://github.com/Payadel/python-package-template/commit/67b3fde6cc96b7a416cc70c6c098833ec3c0ef27))
+* improve docker-compose.yaml ([7b521cb](https://github.com/Payadel/python-package-template/commit/7b521cbf156074f5f0f0a11a01c876bb23ee3ca1))
+* remove unused `environment` in docker-compose.yaml ([6bb1e1c](https://github.com/Payadel/python-package-template/commit/6bb1e1c3d5c9b7b2e7683466af338a23e416fff2))
+
 ### [0.3.15](https://github.com/Payadel/python-package-template/compare/v0.3.14...v0.3.15) (2023-05-27)
 
 
