@@ -7,8 +7,15 @@ from package_name.logger import LogConfigs
 from pydantic import BaseModel
 
 
+class ProxyConfigs(BaseModel):
+    disable = False
+    host = '127.0.0.1'
+    port = 9050
+
+
 class Configs(BaseModel):
     log: LogConfigs
+    proxy: ProxyConfigs
 
 
 @def_result()

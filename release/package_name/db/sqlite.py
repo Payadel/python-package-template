@@ -1,26 +1,28 @@
 import threading
+
 from sqlalchemy import (Boolean, Column, DateTime, Integer, String,
                         create_engine, func)
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session, sessionmaker
 
 # Create thread-local storage
-local_storage = threading.local()
+_local_storage = threading.local()
 
 # SQLite's connection string (using a local file named 'database.db')
-db_url = 'sqlite:///database.db'
-engine = create_engine(db_url)
+_db_url = 'sqlite:///database.db'
+_engine = create_engine(_db_url)
 
 Base = declarative_base()
 
-Session = sessionmaker(bind=engine)
+_Session = sessionmaker(bind=_engine)
 
-def get_db_session():
+
+def get_db_session() -> Session:
     # Check if session already exists for this thread
-    if not hasattr(local_storage, 'session'):
+    if not hasattr(_local_storage, 'session'):
         # Create a new session for this thread
-        local_storage.session = Session()
-    return local_storage.session
+        _local_storage.session = _Session()
+    return _local_storage.session
 
 
 class BaeEntity(Base):
@@ -37,4 +39,4 @@ class User(BaeEntity):
     registered = Column(Boolean)
 
 
-Base.metadata.create_all(engine)
+Base.metadata.create_all(_engine)
