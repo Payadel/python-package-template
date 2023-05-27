@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my-app
+    container_name: my-app-container
+    volumes:
+      - ./app:/app
