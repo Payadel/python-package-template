@@ -3,7 +3,6 @@
 docs
 .pre-commit-config.yaml
 Makefile
-README.md
 .configs
 dist
 node_modules
