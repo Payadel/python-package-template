@@ -8,7 +8,7 @@ COPY . .
 RUN pip install poetry &&\
     poetry build &&\
     cp -r dist outputs &&\
-    cp install-package.sh outputs/install-package.sh
+    cp install-package.py outputs/install-package.py
 
 FROM python:3.10-alpine
 
@@ -37,11 +37,9 @@ ENV DOCKER_NAME="$DOCKER_NAME"
 
 LABEL org.label-schema.description="DESCRIPTION"
 
-COPY --from=builder /app/outputs /tmp/app
-
 WORKDIR /tmp/app
-RUN chmod +x install-package.sh \
-    && ./install-package.sh . \
+COPY --from=builder /app/outputs .
+RUN python install-package.py . \
     && cd / && rm -r /tmp/app
 
 WORKDIR /app
