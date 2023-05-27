@@ -3,12 +3,13 @@ import sys
 
 import inject
 from on_rails import Result, def_result
+from requests import Session as RequestSession
+
 from package_name.configs import Configs, load_configs_from_yaml
 from package_name.inputs import Inputs, get_inputs
 from package_name.logger import create_logger
 from package_name.proxy import Proxy, get_request_session
-from requests import Session as RequestSession
-from run import run
+from package_name.run import run
 
 
 def main():
@@ -29,7 +30,7 @@ def startup() -> Result:
     The startup function is called by the main function to configure the application.
     It loads configuration from a YAML file, creates a logger, and configures dependency injection.
     """
-    configs: Configs = load_configs_from_yaml('configs.yaml').on_fail_break_function().value
+    configs: Configs = load_configs_from_yaml('data/configs.yaml').on_fail_break_function().value
     inputs = get_inputs().on_fail_break_function().value
     logger = create_logger(configs.log).on_fail_break_function().value
 

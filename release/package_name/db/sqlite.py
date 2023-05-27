@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session, sessionmaker
 _local_storage = threading.local()
 
 # SQLite's connection string (using a local file named 'database.db')
-_db_url = 'sqlite:///database.db'
+_db_url = 'sqlite:///data/database.db'
 _engine = create_engine(_db_url)
 
 Base = declarative_base()

@@ -6,6 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     image: my-app
-    container_name: my-app-container
+    container_name: my-app
     volumes:
-      - ./app:/app
+      - ./package_name/data:/app/data
