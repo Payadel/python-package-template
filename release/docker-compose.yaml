@@ -6,3 +6,4 @@ services:
     volumes:
       - ./package_name/data:/app/data
     network_mode: host
+#    restart: always
