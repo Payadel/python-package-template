@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.15](https://github.com/Payadel/python-package-template/compare/v0.3.14...v0.3.15) (2023-05-27)
+
+
+### Features
+
+* support docker ([ef3299d](https://github.com/Payadel/python-package-template/commit/ef3299d3da204fc9e8d8c385148f817950ff8183))
+
 ### [0.3.14](https://github.com/Payadel/python-package-template/compare/v0.3.13...v0.3.14) (2023-05-27)
 
 
