@@ -1,12 +1,15 @@
-# set base image python:3.8-slim-buster
-FROM python:3.10 as builder
+FROM python:3.10-alpine as builder
 
 WORKDIR /app
 
 COPY . .
 
-RUN pip install poetry &&\
-    poetry build &&\
+RUN apk update && \
+    apk add --no-cache build-base && \
+    pip install poetry && \
+    poetry config virtualenvs.create false && \
+    poetry install --no-dev && \
+    poetry build && \
     cp -r dist outputs &&\
     cp install-package.py outputs/install-package.py
 
