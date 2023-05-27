@@ -7,3 +7,7 @@ log:
     level: 'debug'
     file_name: 'app.log'
     format: '%(asctime)s [%(levelname)s] %(message)s'
+proxy:
+  disable: True
+  host: '127.0.0.1'
+  port: 9050
