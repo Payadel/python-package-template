@@ -1,0 +1,61 @@
+name: Push Docker Image
+on:
+  workflow_dispatch:
+    inputs:
+      push:
+        type: boolean
+        default: true
+        description: push to hub.docker.com or not?
+      hub-user-name:
+        required: false
+        default: 'username'
+        description: Docker hub username
+      image-name:
+        required: false
+        default: 'image-name'
+        description: Docker image name
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Inputs
+        uses: Payadel/inputs@v0.2.3
+        id: inputs
+        with:
+          inputs: |
+            - name: push
+              default: true
+            - name: hub-user-name
+              default: username
+            - name: image-name
+              default: image-name
+            - name: image-build-date
+              default: '$(date -u +'%Y-%m-%dT%H:%M:%SZ')'
+            - name: image-version
+              default: '$(node -p -e "require('./package.json').version")'
+            - name: current-branch-name
+              default: '$(git rev-parse --abbrev-ref HEAD)'
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build Docker
+        uses: docker/build-push-action@v4
+        with:
+          push: ${{ steps.inputs.outputs.push }}
+          tags: ${{ steps.inputs.outputs.hub-user-name }}/${{ steps.inputs.outputs.image-name }}:latest, ${{ steps.inputs.outputs.hub-user-name }}/${{ steps.inputs.outputs.image-name }}:${{ steps.inputs.outputs.image-version }}
+          build-args: |
+            DOCKER_BUILD_DATE=${{ steps.inputs.outputs.image-build-date }}
+            DOCKER_VERSION=${{ steps.inputs.outputs.image-version }}

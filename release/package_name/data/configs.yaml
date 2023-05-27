@@ -5,7 +5,7 @@ log:
   file:
     disable: True
     level: 'debug'
-    file_name: 'app.log'
+    file_name: 'data/app.log'
     format: '%(asctime)s [%(levelname)s] %(message)s'
 proxy:
   disable: True
