@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.14](https://github.com/Payadel/python-package-template/compare/v0.3.13...v0.3.14) (2023-05-27)
+
+
+### Features
+
+* set proxy from configs ([f521793](https://github.com/Payadel/python-package-template/commit/f521793fc345600ab9971b03b4ceb77b7f66c611))
+
 ### [0.3.13](https://github.com/Payadel/python-package-template/compare/v0.3.12...v0.3.13) (2023-05-26)
 
 
