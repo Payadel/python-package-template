@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.17](https://github.com/Payadel/python-package-template/compare/v0.3.16...v0.3.17) (2023-05-27)
+
+
+### Fixes
+
+* improve docker ([fc4a89b](https://github.com/Payadel/python-package-template/commit/fc4a89bb38e42992a39c8f5982e6413457ef5816))
+* use `unless-stopped` instead of `always` in docker-compose.yaml ([dd4f51e](https://github.com/Payadel/python-package-template/commit/dd4f51e4aa6efd2356032fb3f9a007dc5c4a2435))
+
 ### [0.3.16](https://github.com/Payadel/python-package-template/compare/v0.3.15...v0.3.16) (2023-05-27)
 
 
