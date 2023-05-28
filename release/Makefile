@@ -1,4 +1,4 @@
-.PHONY: help watch-actions release-action update-poetry-dependencies publish-test-action publish-action tox-action coverage-action build-push-docker build push clean deploy
+.PHONY: help watch-actions release-action update-poetry-dependencies publish-test-action publish-action tox-action coverage-action build-push-docker build push clean deploy docker-run
 
 # Variables
 IMAGE_NAME = IMAGE_NAME
@@ -20,9 +20,12 @@ build-push-docker: ## Build and Push the Docker image
 
 build:  ## Build the Docker image
 	docker build \
-		--build-arg DOCKER_BUILD_DATE=$(BUILD_DATE) \
-		--build-arg DOCKER_VERSION=$(DOCKER_VERSION) \
-		-t $(IMAGE_NAME):$(IMAGE_TAG) .
+  --build-arg DOCKER_BUILD_DATE=$(BUILD_DATE) \
+  --build-arg DOCKER_VERSION=$(DOCKER_VERSION) \
+  -t $(IMAGE_NAME):$(IMAGE_TAG) .
+
+docker-run:  ## Compose up with detached mode
+	docker-compose up -d
 
 push: ## Push the Docker image to a container registry
 	docker tag $(IMAGE_NAME):$(IMAGE_TAG) docker.io/HUB_USER_NAME/$(IMAGE_NAME):$(IMAGE_TAG)
