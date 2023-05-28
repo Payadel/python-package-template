@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.18](https://github.com/Payadel/python-package-template/compare/v0.3.17...v0.3.18) (2023-05-28)
+
+
+### Features
+
+* save logs in separate file per program start ([46e3d61](https://github.com/Payadel/python-package-template/commit/46e3d6192a1fcff7b126ffb42395835277912bba))
+
 ### [0.3.17](https://github.com/Payadel/python-package-template/compare/v0.3.16...v0.3.17) (2023-05-27)
 
 
