@@ -4,6 +4,8 @@ import inject as inject
 from on_rails import Result, def_result, try_func
 from pydantic import BaseModel
 
+from package_name.utility import get_formatted_datetime
+
 
 class StreamConfig(BaseModel):
     """ Stream configs model for logger """
@@ -16,7 +18,7 @@ class FileConfig(BaseModel):
     """ File configs model for logger """
     disable = True
     level = 'debug'
-    file_name = 'app.log'
+    file_name = 'app'
     format = '%(asctime)s [%(levelname)s] %(message)s'
 
 
@@ -37,7 +39,8 @@ def create_logger(log_configs: LogConfigs) -> Result:
     _logger.setLevel(logging.DEBUG)
 
     if not log_configs.file.disable:
-        file_handler = logging.FileHandler(log_configs.file.file_name)
+        file_name = f"{log_configs.file.file_name}-{get_formatted_datetime()}.log"
+        file_handler = logging.FileHandler(file_name)
         file_handler.setLevel(_get_set_level(log_configs.file.level))
         file_formatter = logging.Formatter(log_configs.file.format)
         file_handler.setFormatter(file_formatter)
